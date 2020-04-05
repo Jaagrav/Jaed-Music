@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rhythm</title>
+    <link rel="stylesheet" href="design.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <audio
+      src="./Ariana Grande - no tears left to cry.mp3"
+      class="musicToBePlayed"
+    ></audio>
+    <img
+      src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"
+      class="addBtn"
+      onclick="openAddFiles()"
+    />
+    <center class="imgCent">
+      <img
+        src="https://i.guim.co.uk/img/media/4da77e4d09261deb61e3a881a7477bb83ba87a1b/0_1308_5792_3475/master/5792.jpg?width=700&quality=85&auto=format&fit=max&s=8daf38648935735c84f50c6df0f42135"
+        class="bg"
+      />
+    </center>
+    <div class="thumbnailBg">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Ariana_Grande_No_Tears_Left_to_Cry.png/220px-Ariana_Grande_No_Tears_Left_to_Cry.png"
+        class="thumbnail"
+        disabled
+      />
+    </div>
+    <div class="musicAndAuthorName">
+      <h2 class="songTitle">No tears left to cry</h2>
+      <h4 class="songArtist">Ariana Grande</h4>
+    </div>
+    <div class="controls">
+      <img
+        src="https://images.vexels.com/media/users/3/145866/isolated/preview/b4efb6c6682b2a808631bf8fbd96d015-sound-wave-icon-by-vexels.png"
+        class="musicProgress"
+      />
+      <div class="panel">
+        <img
+          src="https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png"
+          class="playPause"
+          onclick="audioPlayPause()"
+        />
+        <img
+          src="https://i.dlpng.com/static/png/6914896_preview.png"
+          class="prevMusic"
+          onclick="prev()"
+        />
+        <img
+          src="https://i.dlpng.com/static/png/6914896_preview.png"
+          class="nextMusic"
+          onclick="next()"
+        />
+      </div>
+    </div>
+    <div class="fileUploadPage">
+      <center class="uploadLayout">
+        <input type="text" placeholder="Song Name..." class="uploadSongName" />
+        <input type="text" placeholder="Artist..." class="uploadArtistName" />
+        <input
+          type="file"
+          value="upload"
+          class="uploadThumbnail"
+          data-buttonText="thumbnail"
+        />
+        <input
+          type="file"
+          value="upload"
+          class="uploadBg"
+          data-buttonText="Background"
+        />
+        <input
+          type="file"
+          value="upload"
+          class="uploadMusic"
+          data-buttonText="Music"
+        />
+        <button
+          class="submit"
+          onclick='document.querySelector(".fileUploadPage").style.transform =
+        "translateY(-100%)";'
+        >
+          ADD
+        </button>
+      </center>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyDvMOXp4yT-HPr-mcvSTdcroEN5EoTcB7c",
+        authDomain: "musicapp-43362.firebaseapp.com",
+        databaseURL: "https://musicapp-43362.firebaseio.com",
+        projectId: "musicapp-43362",
+        storageBucket: "musicapp-43362.appspot.com",
+        messagingSenderId: "824354196507",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>
