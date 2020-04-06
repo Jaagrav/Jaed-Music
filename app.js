@@ -85,8 +85,9 @@ document.querySelector(".uploadMusic").addEventListener("change", function (e) {
 });
 var k = 0;
 function prev() {
-  if (i == -1) i--;
+  if (i == -1)
   i = k - 1;
+i--;
   load();
 }
 function next() {
