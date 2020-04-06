@@ -15,7 +15,7 @@
     <img
       src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"
       class="addBtn"
-      onclick="openAddFiles()"
+      onclick="window.open('https://jaagrav.github.io/RhythmUploadWindow','_blank');"
     />
     <center class="imgCent">
       <img
@@ -35,6 +35,15 @@
       <h4 class="songArtist">Ariana Grande</h4>
     </div>
     <div class="controls">
+      <input
+        type="range"
+        min="0"
+        max=""
+        class="musicProgressInteractive"
+        value="0"
+        onchange='const progressBar = document.querySelector(".musicProgressInteractive");
+      document.querySelector(".musicToBePlayed").currentTime = progressBar.value;'
+      />
       <img
         src="https://images.vexels.com/media/users/3/145866/isolated/preview/b4efb6c6682b2a808631bf8fbd96d015-sound-wave-icon-by-vexels.png"
         class="musicProgress"
@@ -57,37 +66,6 @@
         />
       </div>
     </div>
-    <div class="fileUploadPage">
-      <center class="uploadLayout">
-        <input type="text" placeholder="Song Name..." class="uploadSongName" />
-        <input type="text" placeholder="Artist..." class="uploadArtistName" />
-        <input
-          type="file"
-          value="upload"
-          class="uploadThumbnail"
-          data-buttonText="thumbnail"
-        />
-        <input
-          type="file"
-          value="upload"
-          class="uploadBg"
-          data-buttonText="Background"
-        />
-        <input
-          type="file"
-          value="upload"
-          class="uploadMusic"
-          data-buttonText="Music"
-        />
-        <button
-          class="submit"
-          onclick='document.querySelector(".fileUploadPage").style.transform =
-        "translateY(-100%)";'
-        >
-          ADD
-        </button>
-      </center>
-    </div>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase.js"></script>
     <script>
       var firebaseConfig = {
@@ -101,5 +79,17 @@
       firebase.initializeApp(firebaseConfig);
     </script>
     <script src="./app.js"></script>
+    <script>
+      function updateMusicProgressValue() {
+        const progressBar = document.querySelector(".musicProgressInteractive");
+        progressBar.max = document.querySelector(".musicToBePlayed").duration;
+        progressBar.value = document.querySelector(
+          ".musicToBePlayed"
+        ).currentTime;
+        console.log("updating...");
+      }
+
+      setInterval(updateMusicProgressValue, 700);
+    </script>
   </body>
 </html>
