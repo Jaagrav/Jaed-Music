@@ -19,81 +19,28 @@ function audioPlayPause() {
     isPlaying = true;
   }
 }
-function openAddFiles() {
-  document.querySelector(".fileUploadPage").style.transform = "translateY(0)";
-}
-document
-  .querySelector(".uploadThumbnail")
-  .addEventListener("change", function (e) {
-    console.log(e);
-    var audio = e.target.files[0];
-    var databaseRef = firebase.database().ref();
-    var storageRef = firebase
-      .storage()
-      .ref(
-        document.querySelector(".uploadSongName").value +
-          "_" +
-          document.querySelector(".uploadArtistName").value +
-          "/Thumbnail"
-      );
-    var task = storageRef.put(audio);
-    task.on("state_changed", function progress(snapshot) {
-      console.log(snapshot.bytesTransferred);
-    });
-  });
-document.querySelector(".uploadBg").addEventListener("change", function (e) {
-  console.log(e);
-  var audio = e.target.files[0];
-  var databaseRef = firebase.database().ref();
-  var storageRef = firebase
-    .storage()
-    .ref(
-      document.querySelector(".uploadSongName").value +
-        "_" +
-        document.querySelector(".uploadArtistName").value +
-        "/Background"
-    );
-  var task = storageRef.put(audio);
-  task.on("state_changed", function progress(snapshot) {
-    console.log(snapshot.bytesTransferred);
-  });
-});
-
-document.querySelector(".uploadMusic").addEventListener("change", function (e) {
-  console.log(e);
-  var audio = e.target.files[0];
-  var databaseRef = firebase.database().ref();
-  var storageRef = firebase
-    .storage()
-    .ref(
-      document.querySelector(".uploadSongName").value +
-        "_" +
-        document.querySelector(".uploadArtistName").value +
-        "/Audio"
-    );
-  var task = storageRef.put(audio);
-  databaseRef
-    .child("MusicFileNames")
-    .push(
-      document.querySelector(".uploadSongName").value +
-        "_" +
-        document.querySelector(".uploadArtistName").value
-    );
-  task.on("state_changed", function progress(snapshot) {
-    console.log(snapshot.bytesTransferred);
-  });
-});
 var k = 0;
 function prev() {
-  if (i == -1)
-  i = k - 1;
-i--;
+  if (i == 0) i = k;
+  i--;
   load();
+  console.log(i + " " + k);
+  document.querySelector(".playPause").style.height = "65px";
+  document.querySelector(".playPause").src =
+    "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
+  document.querySelector(".musicToBePlayed").pause();
+  isPlaying = false;
 }
 function next() {
   if (i == k) i = 0;
   i++;
   load();
+  console.log(i + " " + k);
+  document.querySelector(".playPause").style.height = "65px";
+  document.querySelector(".playPause").src =
+    "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
+  document.querySelector(".musicToBePlayed").pause();
+  isPlaying = false;
 }
 function load() {
   var api = "https://musicapp-43362.firebaseio.com/MusicFileNames.json";
@@ -104,6 +51,7 @@ function gotData(data) {
   var c = 0;
   for (var n in data) {
     addressArray.push(n);
+    console.log(n);
     c++;
   }
   k = c;
