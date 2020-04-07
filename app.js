@@ -30,23 +30,29 @@ function prev() {
   if (i == 0) i = k;
   i--;
   load();
+  pauseGraphics();
   document.querySelector(".playPause").style.height = "65px";
   document.querySelector(".playPause").src =
     "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
   document.querySelector(".musicToBePlayed").pause();
   isPlaying = false;
-  document.querySelector("#soundStick" + i).style.animationPlayState = "paused";
+}
+function pauseGraphics() {
+  for (var i = 1; i <= 26; i++) {
+    document.querySelector("#soundStick" + i).style.animationPlayState =
+      "paused";
+  }
 }
 function next() {
   if (i == k) i = 0;
   i++;
   load();
+  pauseGraphics();
   document.querySelector(".playPause").style.height = "65px";
   document.querySelector(".playPause").src =
     "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
   document.querySelector(".musicToBePlayed").pause();
   isPlaying = false;
-  document.querySelector("#soundStick" + i).style.animationPlayState = "paused";
 }
 function load() {
   var api = "https://musicapp-43362.firebaseio.com/MusicFileNames.json";
