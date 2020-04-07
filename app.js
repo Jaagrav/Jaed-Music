@@ -11,11 +11,17 @@ function audioPlayPause() {
       "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
     document.querySelector(".musicToBePlayed").pause();
     isPlaying = false;
+    for (var i = 1; i <= 26; i++)
+      document.querySelector("#soundStick" + i).style.animationPlayState =
+        "paused";
   } else {
     document.querySelector(".playPause").style.height = "43px";
     document.querySelector(".playPause").src =
       "https://www.shareicon.net/data/512x512/2015/11/20/675035_multimedia_512x512.png";
     document.querySelector(".musicToBePlayed").play();
+    for (var i = 1; i <= 26; i++)
+      document.querySelector("#soundStick" + i).style.animationPlayState =
+        "running";
     isPlaying = true;
   }
 }
@@ -24,23 +30,23 @@ function prev() {
   if (i == 0) i = k;
   i--;
   load();
-  console.log(i + " " + k);
   document.querySelector(".playPause").style.height = "65px";
   document.querySelector(".playPause").src =
     "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
   document.querySelector(".musicToBePlayed").pause();
   isPlaying = false;
+  document.querySelector("#soundStick" + i).style.animationPlayState = "paused";
 }
 function next() {
   if (i == k) i = 0;
   i++;
   load();
-  console.log(i + " " + k);
   document.querySelector(".playPause").style.height = "65px";
   document.querySelector(".playPause").src =
     "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
   document.querySelector(".musicToBePlayed").pause();
   isPlaying = false;
+  document.querySelector("#soundStick" + i).style.animationPlayState = "paused";
 }
 function load() {
   var api = "https://musicapp-43362.firebaseio.com/MusicFileNames.json";
@@ -51,7 +57,6 @@ function gotData(data) {
   var c = 0;
   for (var n in data) {
     addressArray.push(n);
-    console.log(n);
     c++;
   }
   k = c;
@@ -132,5 +137,4 @@ function gotData(data) {
   document.querySelector(".songArtist").innerHTML = data[
     addressArray[i]
   ].substring(underscoreIndex + 1);
-  console.log(i + " " + data[addressArray[i]] + " " + underscoreIndex);
 }
