@@ -44,10 +44,34 @@
         onchange='const progressBar = document.querySelector(".musicProgressInteractive");
       document.querySelector(".musicToBePlayed").currentTime = progressBar.value;'
       />
-      <img
-        src="https://images.vexels.com/media/users/3/145866/isolated/preview/b4efb6c6682b2a808631bf8fbd96d015-sound-wave-icon-by-vexels.png"
-        class="musicProgress"
-      />
+      <div class="musicProgress">
+        <div class="soundSticks" id="soundStick1"></div>
+        <div class="soundSticks" id="soundStick2"></div>
+        <div class="soundSticks" id="soundStick3"></div>
+        <div class="soundSticks" id="soundStick4"></div>
+        <div class="soundSticks" id="soundStick5"></div>
+        <div class="soundSticks" id="soundStick6"></div>
+        <div class="soundSticks" id="soundStick7"></div>
+        <div class="soundSticks" id="soundStick8"></div>
+        <div class="soundSticks" id="soundStick9"></div>
+        <div class="soundSticks" id="soundStick10"></div>
+        <div class="soundSticks" id="soundStick11"></div>
+        <div class="soundSticks" id="soundStick12"></div>
+        <div class="soundSticks" id="soundStick13"></div>
+        <div class="soundSticks" id="soundStick14"></div>
+        <div class="soundSticks" id="soundStick15"></div>
+        <div class="soundSticks" id="soundStick16"></div>
+        <div class="soundSticks" id="soundStick17"></div>
+        <div class="soundSticks" id="soundStick18"></div>
+        <div class="soundSticks" id="soundStick19"></div>
+        <div class="soundSticks" id="soundStick20"></div>
+        <div class="soundSticks" id="soundStick21"></div>
+        <div class="soundSticks" id="soundStick22"></div>
+        <div class="soundSticks" id="soundStick23"></div>
+        <div class="soundSticks" id="soundStick24"></div>
+        <div class="soundSticks" id="soundStick25"></div>
+        <div class="soundSticks" id="soundStick26"></div>
+      </div>
       <div class="panel">
         <img
           src="https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png"
@@ -86,7 +110,6 @@
         progressBar.value = document.querySelector(
           ".musicToBePlayed"
         ).currentTime;
-        console.log("updating...");
       }
 
       setInterval(updateMusicProgressValue, 700);
