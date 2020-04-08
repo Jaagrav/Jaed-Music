@@ -8,16 +8,16 @@ function audioPlayPause() {
   if (isPlaying) {
     document.querySelector(".playPause").style.height = "65px";
     document.querySelector(".playPause").src =
-      "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
+      "https://image.flaticon.com/icons/png/512/91/91925.png";
     document.querySelector(".musicToBePlayed").pause();
     isPlaying = false;
     for (var i = 1; i <= 26; i++)
       document.querySelector("#soundStick" + i).style.animationPlayState =
         "paused";
   } else {
-    document.querySelector(".playPause").style.height = "43px";
+    document.querySelector(".playPause").style.height = "70px";
     document.querySelector(".playPause").src =
-      "https://www.shareicon.net/data/512x512/2015/11/20/675035_multimedia_512x512.png";
+      "https://cdn4.iconfinder.com/data/icons/rounded-black-music-player/139/Pause-RoundedBlack_musicplayer-512.png";
     document.querySelector(".musicToBePlayed").play();
     for (var i = 1; i <= 26; i++)
       document.querySelector("#soundStick" + i).style.animationPlayState =
@@ -33,7 +33,7 @@ function prev() {
   pauseGraphics();
   document.querySelector(".playPause").style.height = "65px";
   document.querySelector(".playPause").src =
-    "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
+    "https://image.flaticon.com/icons/png/512/91/91925.png";
   document.querySelector(".musicToBePlayed").pause();
   isPlaying = false;
 }
@@ -50,7 +50,7 @@ function next() {
   pauseGraphics();
   document.querySelector(".playPause").style.height = "65px";
   document.querySelector(".playPause").src =
-    "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
+    "https://image.flaticon.com/icons/png/512/91/91925.png";
   document.querySelector(".musicToBePlayed").pause();
   isPlaying = false;
 }
