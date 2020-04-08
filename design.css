@@ -33,8 +33,8 @@ body {
 }
 .thumbnailBg {
   position: absolute;
-  height: 15pc;
-  width: 15pc;
+  height: 17pc;
+  width: 17pc;
   z-index: 4;
   margin: auto;
   bottom: 55vh;
@@ -55,7 +55,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 6px;
   margin: auto;
-  bottom: 35%;
+  bottom: 37%;
   right: 0;
   left: 0;
   z-index: 4;
@@ -85,10 +85,10 @@ body {
 }
 .panel {
   position: absolute;
-  height: 10pc;
+  height: 5pc;
   width: 20pc;
   margin: auto;
-  top: 53%;
+  top: 65%;
   bottom: 0;
   left: 0;
   right: 0;
@@ -109,7 +109,7 @@ body {
   filter: invert(1);
   margin: auto;
   top: 0;
-  left: 30px;
+  left: 55px;
   bottom: 0;
   transform: rotate(180deg);
 }
@@ -119,7 +119,7 @@ body {
   filter: invert(1);
   margin: auto;
   top: 0;
-  right: 30px;
+  right: 55px;
   bottom: 0;
 }
 .addBtn {
@@ -134,8 +134,8 @@ body {
   margin: auto;
   right: 0;
   left: 0;
-  top: 9%;
-  bottom: 9%;
+  top: 20%;
+  bottom: 20%;
 }
 .musicProgressInteractive {
   -webkit-appearance: none;
@@ -145,15 +145,15 @@ body {
   margin: auto;
   right: 0;
   left: 0;
-  top: 9%;
-  bottom: 9%;
+  top: 8%;
+  bottom: 0;
   z-index: 7;
   background: transparent;
 }
 .musicProgressInteractive::-webkit-slider-thumb {
   -webkit-appearance: none;
   height: 120px;
-  width: 11px;
+  width: 9px;
   background: linear-gradient(rgb(231, 1, 97), rgb(78, 0, 180));
   border-radius: 20px;
 }
@@ -162,7 +162,7 @@ body {
   height: 120px;
   width: 296px;
   margin: auto;
-  top: 0;
+  top: 8%;
   right: 0;
   left: 0;
   bottom: 0;
