@@ -1,4 +1,128 @@
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@500&family=Montserrat:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+body {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: rgb(4, 0, 27);
+}
+.topThumbnail {
+  position: relative;
+  width: 100%;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+.divider {
+  position: relative;
+  height: 10pc;
+  width: 100%;
+  margin: auto;
+  top: -150px;
+  right: 0;
+  left: 0;
+  z-index: 6;
+  letter-spacing: 3px;
+  font-family: "Bebas Neue", cursive;
+  background: linear-gradient(transparent, rgb(7, 0, 48), rgb(4, 0, 27));
+}
+.divider h1 {
+  position: relative;
+  color: white;
+  margin: 0;
+  margin-left: 30px;
+  font-size: 50px;
+  height: fit-content;
+  width: fit-content;
+}
+.divider h4 {
+  position: relative;
+  color: white;
+  margin: 0;
+  margin-left: 35px;
+  font-size: 30px;
+  height: fit-content;
+  width: fit-content;
+}
+.homeContent {
+  position: relative;
+  height: 50pc;
+  width: 100%;
+  margin: auto;
+  top: -152px;
+  right: 0;
+  left: 0;
+  background: rgb(4, 0, 27);
+}
+.topPlay {
+  position: relative;
+  margin: auto;
+  right: 0;
+  top: 0;
+  filter: invert(1);
+  bottom: 25px;
+  margin-left: 25px;
+  height: 50px;
+  z-index: 5;
+}
+.miniPlayer {
+  position: fixed;
+  height: 5pc;
+  width: 100%;
+  margin: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  font-family: "Bebas Neue", cursive;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 50px black;
+}
+
+.miniPlayer .thumbnailMiniPlayer {
+  position: absolute;
+  height: 80%;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  margin-left: 8px;
+  border-radius: 10px;
+}
+.miniPlayer h3 {
+  color: white;
+  position: relative;
+  left: 90px;
+  font-size: 25px;
+  margin: 0;
+  margin-top: 11px;
+  max-width: 50%;
+  height: fit-content;
+  width: fit-content;
+}
+
+.miniPlayer h6 {
+  color: white;
+  position: relative;
+  left: 90px;
+  font-size: 20px;
+  margin: 0;
+  height: fit-content;
+  width: fit-content;
+  max-width: 40%;
+  word-wrap: none;
+  overflow: hidden;
+}
+.miniPlayer .playPauseMiniPlayer {
+  position: absolute;
+  margin: auto;
+  height: 50px;
+  top: 0;
+  bottom: 0;
+  right: 20px;
+  filter: invert(1);
+}
 body {
   background: #000;
 }
@@ -55,7 +179,7 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   line-height: 6px;
   margin: auto;
-  bottom: 37%;
+  bottom: 34%;
   right: 0;
   left: 0;
   z-index: 4;
@@ -124,9 +248,11 @@ body {
 }
 .addBtn {
   position: absolute;
-  height: 30px;
+  height: 80px;
   filter: invert(1);
-  z-index: 4;
+  z-index: 14;
+  margin: 0;
+  transform: rotate(180deg);
 }
 .musicProgress {
   position: absolute;
@@ -290,4 +416,19 @@ body {
   50% {
     height: 10px;
   }
+}
+.player {
+  position: fixed;
+  z-index: +13;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: #000;
+  transition: 1s;
+  transform: translateY(-100%);
+  overflow: hidden;
 }
