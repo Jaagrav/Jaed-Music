@@ -3,93 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rhythm</title>
+    <title>Rhythm - Home</title>
+    <link rel="stylesheet" href="design.css" />
     <link rel="stylesheet" href="design.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
-    <audio
-      src="./Ariana Grande - no tears left to cry.mp3"
-      class="musicToBePlayed"
-    ></audio>
     <img
-      src="https://cdn4.iconfinder.com/data/icons/wirecons-free-vector-icons/32/add-128.png"
-      class="addBtn"
-      onclick="window.open('https://jaagrav.github.io/RhythmUploadWindow','_blank');"
+      src="https://firebasestorage.googleapis.com/v0/b/musicapp-43362.appspot.com/o/Youngblood_5SOS%2FThumbnail?alt=media&token=256deb84-e405-4ce4-981b-ef5f4d3c6ba3"
+      class="topThumbnail"
+      disabled=""
     />
-    <center class="imgCent">
+    <div class="divider">
       <img
-        src="https://i.guim.co.uk/img/media/4da77e4d09261deb61e3a881a7477bb83ba87a1b/0_1308_5792_3475/master/5792.jpg?width=700&quality=85&auto=format&fit=max&s=8daf38648935735c84f50c6df0f42135"
-        class="bg"
+        src="https://image.flaticon.com/icons/png/512/91/91925.png"
+        class="topPlay"
       />
-    </center>
-    <div class="thumbnailBg">
+      <h1>Youngblood</h1>
+      <h4>5SOS</h4>
+    </div>
+    <div class="miniPlayer">
       <img
-        src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Ariana_Grande_No_Tears_Left_to_Cry.png/220px-Ariana_Grande_No_Tears_Left_to_Cry.png"
-        class="thumbnail"
-        disabled
+        onclick="openPlayer()"
+        class="thumbnailMiniPlayer"
+        src="https://firebasestorage.googleapis.com/v0/b/musicapp-43362.appspot.com/o/No%20more%20tears%20left%20to%20cry_Ariana%20Grande%2FThumbnail?alt=media&token=0c51a9fe-b362-4f0a-8d92-ab244b3fab51"
+      />
+      <h3 class="miniPlayerSongTitle" onclick="openPlayer()">
+        No tears left to cry
+      </h3>
+      <h6 class="miniPlayerArtistName">Ariana Grande</h6>
+      <img
+        src="https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png"
+        class="playPauseMiniPlayer"
+        onclick="audioPlayPause()"
       />
     </div>
-    <div class="musicAndAuthorName">
-      <h2 class="songTitle">No tears left to cry</h2>
-      <h4 class="songArtist">Ariana Grande</h4>
-    </div>
-    <div class="controls">
-      <input
-        type="range"
-        min="0"
-        max=""
-        class="musicProgressInteractive"
-        value="0"
-        onchange='const progressBar = document.querySelector(".musicProgressInteractive");
+    <div class="player">
+      <audio
+        src="./Ariana Grande - no tears left to cry.mp3"
+        class="musicToBePlayed"
+      ></audio>
+      <img
+        src="https://cdn1.iconfinder.com/data/icons/universal-icons-set-for-web-and-mobile/100/controls_0-12-512.png"
+        class="addBtn"
+        onclick="closePlayer()"
+      />
+      <center class="imgCent">
+        <img
+          src="https://i.guim.co.uk/img/media/4da77e4d09261deb61e3a881a7477bb83ba87a1b/0_1308_5792_3475/master/5792.jpg?width=700&quality=85&auto=format&fit=max&s=8daf38648935735c84f50c6df0f42135"
+          class="bg"
+        />
+      </center>
+      <div class="thumbnailBg">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/1/15/Ariana_Grande_No_Tears_Left_to_Cry.png/220px-Ariana_Grande_No_Tears_Left_to_Cry.png"
+          class="thumbnail"
+          disabled
+        />
+      </div>
+      <div class="musicAndAuthorName">
+        <h2 class="songTitle">No tears left to cry</h2>
+        <h4 class="songArtist">Ariana Grande</h4>
+      </div>
+      <div class="controls">
+        <input
+          type="range"
+          min="0"
+          max=""
+          class="musicProgressInteractive"
+          value="0"
+          onchange='const progressBar = document.querySelector(".musicProgressInteractive");
       document.querySelector(".musicToBePlayed").currentTime = progressBar.value;'
-      />
-      <div class="musicProgress">
-        <div class="soundSticks" id="soundStick1"></div>
-        <div class="soundSticks" id="soundStick2"></div>
-        <div class="soundSticks" id="soundStick3"></div>
-        <div class="soundSticks" id="soundStick4"></div>
-        <div class="soundSticks" id="soundStick5"></div>
-        <div class="soundSticks" id="soundStick6"></div>
-        <div class="soundSticks" id="soundStick7"></div>
-        <div class="soundSticks" id="soundStick8"></div>
-        <div class="soundSticks" id="soundStick9"></div>
-        <div class="soundSticks" id="soundStick10"></div>
-        <div class="soundSticks" id="soundStick11"></div>
-        <div class="soundSticks" id="soundStick12"></div>
-        <div class="soundSticks" id="soundStick13"></div>
-        <div class="soundSticks" id="soundStick14"></div>
-        <div class="soundSticks" id="soundStick15"></div>
-        <div class="soundSticks" id="soundStick16"></div>
-        <div class="soundSticks" id="soundStick17"></div>
-        <div class="soundSticks" id="soundStick18"></div>
-        <div class="soundSticks" id="soundStick19"></div>
-        <div class="soundSticks" id="soundStick20"></div>
-        <div class="soundSticks" id="soundStick21"></div>
-        <div class="soundSticks" id="soundStick22"></div>
-        <div class="soundSticks" id="soundStick23"></div>
-        <div class="soundSticks" id="soundStick24"></div>
-        <div class="soundSticks" id="soundStick25"></div>
-        <div class="soundSticks" id="soundStick26"></div>
-      </div>
-      <div class="panel">
-        <img
-          src="https://image.flaticon.com/icons/png/512/91/91925.png"
-          class="playPause"
-          onclick="audioPlayPause()"
         />
-        <img
-          src="https://cdn0.iconfinder.com/data/icons/doodle-audio-video-game/91/Audio_-_Video_-_Game_27-512.png"
-          class="prevMusic"
-          onclick="prev()"
-        />
-        <img
-          src="https://cdn0.iconfinder.com/data/icons/doodle-audio-video-game/91/Audio_-_Video_-_Game_27-512.png"
-          class="nextMusic"
-          onclick="next()"
-        />
+        <div class="musicProgress">
+          <div class="soundSticks" id="soundStick1"></div>
+          <div class="soundSticks" id="soundStick2"></div>
+          <div class="soundSticks" id="soundStick3"></div>
+          <div class="soundSticks" id="soundStick4"></div>
+          <div class="soundSticks" id="soundStick5"></div>
+          <div class="soundSticks" id="soundStick6"></div>
+          <div class="soundSticks" id="soundStick7"></div>
+          <div class="soundSticks" id="soundStick8"></div>
+          <div class="soundSticks" id="soundStick9"></div>
+          <div class="soundSticks" id="soundStick10"></div>
+          <div class="soundSticks" id="soundStick11"></div>
+          <div class="soundSticks" id="soundStick12"></div>
+          <div class="soundSticks" id="soundStick13"></div>
+          <div class="soundSticks" id="soundStick14"></div>
+          <div class="soundSticks" id="soundStick15"></div>
+          <div class="soundSticks" id="soundStick16"></div>
+          <div class="soundSticks" id="soundStick17"></div>
+          <div class="soundSticks" id="soundStick18"></div>
+          <div class="soundSticks" id="soundStick19"></div>
+          <div class="soundSticks" id="soundStick20"></div>
+          <div class="soundSticks" id="soundStick21"></div>
+          <div class="soundSticks" id="soundStick22"></div>
+          <div class="soundSticks" id="soundStick23"></div>
+          <div class="soundSticks" id="soundStick24"></div>
+          <div class="soundSticks" id="soundStick25"></div>
+          <div class="soundSticks" id="soundStick26"></div>
+        </div>
+        <div class="panel">
+          <img
+            src="https://image.flaticon.com/icons/png/512/91/91925.png"
+            class="playPause"
+            onclick="audioPlayPause()"
+          />
+          <img
+            src="https://static.thenounproject.com/png/646306-200.png"
+            class="prevMusic"
+            onclick="prev()"
+          />
+          <img
+            src="https://static.thenounproject.com/png/646306-200.png"
+            class="nextMusic"
+            onclick="next()"
+          />
+        </div>
       </div>
     </div>
+    <div class="homeContent"></div>
     <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase.js"></script>
     <script>
       var firebaseConfig = {
