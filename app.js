@@ -14,6 +14,8 @@ function audioPlayPause() {
     for (var i = 1; i <= 26; i++)
       document.querySelector("#soundStick" + i).style.animationPlayState =
         "paused";
+    document.querySelector(".playPauseMiniPlayer").src =
+      "https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png";
   } else {
     document.querySelector(".playPause").style.height = "70px";
     document.querySelector(".playPause").src =
@@ -22,6 +24,8 @@ function audioPlayPause() {
     for (var i = 1; i <= 26; i++)
       document.querySelector("#soundStick" + i).style.animationPlayState =
         "running";
+    document.querySelector(".playPauseMiniPlayer").src =
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/OOjs_UI_icon_pause.svg/1200px-OOjs_UI_icon_pause.svg.png";
     isPlaying = true;
   }
 }
@@ -85,6 +89,7 @@ function gotData(data) {
       // Or inserted into an <img> element:
       var img = document.querySelector(".thumbnail");
       img.src = url;
+      document.querySelector(".thumbnailMiniPlayer").src = url;
     })
     .catch(function (error) {
       // Handle any errors
@@ -143,4 +148,16 @@ function gotData(data) {
   document.querySelector(".songArtist").innerHTML = data[
     addressArray[i]
   ].substring(underscoreIndex + 1);
+  document.querySelector(
+    ".miniPlayerSongTitle"
+  ).innerHTML = document.querySelector(".songTitle").innerHTML;
+  document.querySelector(
+    ".miniPlayerArtistName"
+  ).innerHTML = document.querySelector(".songArtist").innerHTML;
+}
+function openPlayer() {
+  document.querySelector(".player").style.transform = "translateY(0)";
+}
+function closePlayer() {
+  document.querySelector(".player").style.transform = "translateY(-100%)";
 }
