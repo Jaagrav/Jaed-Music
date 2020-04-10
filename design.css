@@ -97,7 +97,7 @@ body {
   font-size: 25px;
   margin: 0;
   margin-top: 11px;
-  max-width: 70%;
+  max-width: 80%;
   height: fit-content;
   width: fit-content;
 }
@@ -161,7 +161,7 @@ body {
   width: 17pc;
   z-index: 4;
   margin: auto;
-  bottom: 45vh;
+  bottom: 35vh;
   right: 0;
   left: 0;
   border-radius: 50%;
