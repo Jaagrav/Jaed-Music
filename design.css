@@ -248,7 +248,7 @@ body {
 }
 .addBtn {
   position: absolute;
-  height: 80px;
+  height: 50px;
   filter: invert(1);
   z-index: 14;
   margin: 0;
