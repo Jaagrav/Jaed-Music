@@ -15,34 +15,44 @@
       disabled=""
     />
     <div class="divider">
-      <img
-        src="https://image.flaticon.com/icons/png/512/91/91925.png"
-        class="topPlay"
-      />
-      <h1>Youngblood</h1>
-      <h4>5SOS</h4>
+      <center>
+        <img
+          src="https://image.flaticon.com/icons/png/512/91/91925.png"
+          class="topPlay"
+          onclick="playIndex(4)"
+        />
+      </center>
+      <h1 class="topTitle">Youngblood</h1>
+      <h4 class="topArtist">5SOS</h4>
+      <div class="recentlyUploaded">
+        <h1 class="recentlyUploadedHeading">Recently<br />Uploaded</h1>
+        <div class="container">
+          <center class="actualContainer"></center>
+        </div>
+      </div>
     </div>
     <div class="miniPlayer">
-      <img
-        onclick="openPlayer()"
-        class="thumbnailMiniPlayer"
-        src="https://firebasestorage.googleapis.com/v0/b/musicapp-43362.appspot.com/o/No%20more%20tears%20left%20to%20cry_Ariana%20Grande%2FThumbnail?alt=media&token=0c51a9fe-b362-4f0a-8d92-ab244b3fab51"
-      />
-      <h3 class="miniPlayerSongTitle" onclick="openPlayer()">
-        No tears left to cry
-      </h3>
-      <h6 class="miniPlayerArtistName">Ariana Grande</h6>
+      <img onclick="openPlayer()" class="thumbnailMiniPlayer" src="" />
+      <h3 class="miniPlayerSongTitle" onclick="openPlayer()"></h3>
+      <h6 class="miniPlayerArtistName"></h6>
       <img
         src="https://webcomicms.net/sites/default/files/clipart/162752/play-button-png-162752-841916.png"
         class="playPauseMiniPlayer"
         onclick="audioPlayPause()"
       />
+      <img
+        src="https://cdn1.iconfinder.com/data/icons/universal-icons-set-for-web-and-mobile/100/controls_0-12-512.png"
+        class="miniPlayerPrev"
+        onclick="prev()"
+      />
+      <img
+        src="https://cdn1.iconfinder.com/data/icons/universal-icons-set-for-web-and-mobile/100/controls_0-12-512.png"
+        class="miniPlayerNext"
+        onclick="next()"
+      />
     </div>
     <div class="player">
-      <audio
-        src="./Ariana Grande - no tears left to cry.mp3"
-        class="musicToBePlayed"
-      ></audio>
+      <audio src="" class="musicToBePlayed"></audio>
       <img
         src="https://cdn1.iconfinder.com/data/icons/universal-icons-set-for-web-and-mobile/100/controls_0-12-512.png"
         class="addBtn"
@@ -120,6 +130,7 @@
             onclick="next()"
           />
         </div>
+        <input type="range" class="volumeRocker" value="7" min="1" max="10" />
       </div>
     </div>
     <div class="homeContent"></div>
@@ -137,14 +148,26 @@
     </script>
     <script src="./app.js"></script>
     <script>
+      var duration = document.querySelector(".musicToBePlayed").duration;
       function updateMusicProgressValue() {
         const progressBar = document.querySelector(".musicProgressInteractive");
         progressBar.max = document.querySelector(".musicToBePlayed").duration;
         progressBar.value = document.querySelector(
           ".musicToBePlayed"
         ).currentTime;
+        document.querySelector(".musicToBePlayed").volume =
+          document.querySelector(".volumeRocker").value / 10;
       }
-
+      setInterval(() => {
+        if (
+          document.querySelector(".musicToBePlayed").currentTime ==
+          document.querySelector(".musicToBePlayed").duration
+        ) {
+          console.log("Song Finished.");
+          audioPlayPause();
+          next();
+        }
+      }, 1500);
       setInterval(updateMusicProgressValue, 700);
     </script>
   </body>
