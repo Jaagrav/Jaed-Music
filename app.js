@@ -184,7 +184,7 @@ function openPlayer() {
 function closePlayer() {
   document.querySelector(".player").style.transform = "translateY(-100%)";
 }
-var topIndex = 4;
+var topIndex = 0;
 function loadFirst() {
   topLoadGraphicMedia();
 }
