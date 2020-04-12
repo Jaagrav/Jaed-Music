@@ -82,7 +82,7 @@ function next() {
   }, 1500);
 }
 function load() {
-  var api = "https://musicapp-43362.firebaseio.com/MusicFileNames.json";
+  var api = "https://rhythm-3ef06.firebaseio.com/MusicFileNames.json";
   $.getJSON(api, gotData);
 }
 var addressArray = [];
@@ -189,7 +189,7 @@ function loadFirst() {
   topLoadGraphicMedia();
 }
 function topLoadGraphicMedia() {
-  var api = "https://musicapp-43362.firebaseio.com/MusicFileNames.json";
+  var api = "https://rhythm-3ef06.firebaseio.com/MusicFileNames.json";
   $.getJSON(api, playTopLoadGraphicMedia);
 }
 function playTopLoadGraphicMedia(data) {
@@ -232,7 +232,7 @@ function playTopLoadGraphicMedia(data) {
   ].substring(underscoreIndex + 1);
 }
 function topLoad() {
-  var api = "https://musicapp-43362.firebaseio.com/MusicFileNames.json";
+  var api = "https://rhythm-3ef06.firebaseio.com/MusicFileNames.json";
   $.getJSON(api, playTop);
 }
 function playIndex(index) {
@@ -346,7 +346,7 @@ function playTop(data) {
   }, 1500);
 }
 function loadRecentlyUploaded() {
-  var api = "https://musicapp-43362.firebaseio.com/MusicFileNames.json";
+  var api = "https://rhythm-3ef06.firebaseio.com/MusicFileNames.json";
   $.getJSON(api, loadRecentlyUploads);
 }
 function loadRecentlyUploads(data) {
