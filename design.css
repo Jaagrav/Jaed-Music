@@ -428,7 +428,7 @@ body {
   border-radius: 50px;
   float: left;
   margin-right: 2px;
-  animation: hertz 1.8s infinite ease-in-out;
+  animation: hert 1.8s infinite ease-in-out;
   animation-play-state: paused;
   transform-origin: center;
 }
